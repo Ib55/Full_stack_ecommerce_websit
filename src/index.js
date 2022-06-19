@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { GlobalState } from './state/provider';
+import reducer,{initialstate} from './state/reducer';
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+   <GlobalState initialstate={initialstate} reducer={reducer}>
+   <App />
+   </GlobalState>
   </React.StrictMode>
 );
 
